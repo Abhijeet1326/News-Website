@@ -1,0 +1,193 @@
+#myvid{
+    min-width: 100%;
+    object-fit: cover;
+    height: 80vh;
+    border-bottom: 5px solid aqua;
+}
+
+.date-range{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    backdrop-filter: blur(8px);
+    color: black;
+}
+
+.date-range input{
+    font-size: 25px;
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+.vid-cont{
+    position: relative;
+    display: flex;
+    
+}
+
+.search-cont{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background: transparent;
+    width: 1500px;
+    height: 100px;
+    border: 3px solid black;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+}
+ input:focus{
+    outline: none;
+    background: transparent;
+ }
+.search-cont input{
+    margin: 0px 7px;
+    border: none;
+    border-bottom: 2px solid black;
+    padding: 10px 22px;
+    font-size: 35px;
+    background: transparent;
+    backdrop-filter: blur(8px);
+}
+
+#sub-but{
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background: transparent;
+    backdrop-filter: blur(8px);
+    color: black;
+    align-items: center;
+}
+
+.search-cont button span{
+    font-size: 2.1rem;
+}
+
+@media (max-width:1400px){   
+    .date-range{
+        font-size: 1.5rem;
+    }
+    .search-cont{
+        width: 1300px;
+    }
+
+    .search-cont input{
+        font-size: 30px;
+    }
+}
+
+@media (max-width:1340px){   
+    .date-range {
+        font-size: 1.5rem;
+    }
+
+    .search-cont{
+        flex-direction: column;
+        width: 800px;
+        height: 20vh;
+    }
+
+    .search-cont input{
+        font-size: 25px;
+    }
+}
+
+@media (max-width:900px){
+    .search-cont{
+        width: 650px;
+    }
+
+    .date-range{
+        font-size: 1.1rem;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .search-cont input{
+        padding: 8px 20px;
+        font-size: 30px;
+    }
+
+    #myvid{
+        height: 60vh;
+    }
+}
+
+@media (max-width:700px){
+    .search-cont{
+        width: 580px;
+    }
+
+    .date-range{
+        flex-direction: column;
+    }
+
+    .search-cont input{
+        padding: 4px 14px;
+        font-size: 22px;
+    }
+
+    #myvid{
+        height: 40vh;
+    }
+}
+
+@media (max-width:630px){
+    .search-cont{
+        width: 400px;
+        height: 18vh;
+    }
+
+    .search-cont input{
+        padding: 4px 8px;
+        font-size: 22px;
+    }
+
+    .search-cont button{
+        width: 40px;
+        height: 40px;
+    }
+
+    .search-cont button span{
+        font-size: 1.7rem;
+    }
+
+    #myvid{
+        height: 40vh;
+    }
+}
+
+@media (max-width:450px){
+    .search-cont{
+        width: 300px;
+    }
+
+    .search-cont input{
+        padding: 6px 0px;
+        margin: 0px 5px;
+        font-size: 22px;
+        font-size: 18px;
+    }
+
+     #sub-but{
+        width: 33px;
+        height: 33px;
+    }
+
+    #sub-but span{
+        font-size: 1.4rem;
+    }
+
+    #myvid{
+        height: 40vh;
+    }
+}

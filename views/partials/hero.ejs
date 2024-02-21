@@ -1,0 +1,27 @@
+<div class="vid-cont">
+    <video height="400px" width="800px" autoplay loop muted id="myvid">
+        <source src="../../public/vid.mp4" type="video/mp4">
+    </video>
+    <form  action="/search" method="POST">
+        <div class="search-cont" >
+            <div>
+                <input type="text" placeholder="Search" name="search" type="search">
+                <button type="submit" id="sub-but">
+                    <span class="material-symbols-outlined" style="text-align: center;">search</span>
+                </button>
+            </div>
+            <div class="date-range">
+                <div>
+                    <label for="start" >Start date:</label>
+                    <input type="date" id="start" name="tripstart" value="2024-02-21" min="2024-01-021" max="2024-02-20" style="padding: 0px;"/>
+                </div>
+                <div>
+                    <label for="end" >End date:</label>
+                    <input type="date" id="end" name="tripend" value="2024-02-20" min="2024-01-21" max="2024-02-20" style="padding: 0px;"/>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    
+</div>
