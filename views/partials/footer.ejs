@@ -18,8 +18,10 @@
           exclusive offers.
         </p>
         <div class="news-letter">
-          <input type="text" placeholder="Your email" required>
-          <input type="button" id="sub" value="SUBSCRIBE" onclick="this.value='Done'">
+          <form action="/feedback" method="post">
+            <input type="text" placeholder="Your email" required name="feedback_email">
+            <input type="submit" id="sub" value="SUBSCRIBE" onclick="this.value='Done'">
+          </form>
         </div>
         
         <div class="icons">

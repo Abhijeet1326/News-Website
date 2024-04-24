@@ -43,7 +43,7 @@
     color: black;
     max-width: 300px;
   }
-  .news-letter {
+  .news-letter form{
     display: flex;
     gap: 5px;
   }

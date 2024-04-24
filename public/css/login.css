@@ -130,3 +130,30 @@ button{
 .signup a:hover{
     color:pink;
 }
+
+
+  
+.ret{
+    text-align: center;
+    padding: 10px 0px;
+    margin-top: 10px;
+    z-index:1000;
+    
+}
+
+.ret  a{
+    background: transparent;
+    border: none;
+    height: 60px;
+    width: 60px;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 8px 8px;
+    
+}
+
+
+
+.ret  a:hover{
+    color: white;
+}

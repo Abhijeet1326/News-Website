@@ -13,7 +13,14 @@ const userSchema = mongoose.Schema({
     phone: String,
     password: String
 });
+
+const UserFeedBack = mongoose.Schema({
+    email: String
+});
+
+const FeedBack = mongoose.model("Feed", UserFeedBack);
 const Item = mongoose.model("USer", userSchema);
+
 
 newsr.get('/login', (req, res) => {
     res.render("login.ejs");
@@ -25,15 +32,15 @@ newsr.post("/login", async(req, res) => {
     const check = await Item.findOne({email:email});
     const passMatch = await bcrypt.compare(password, check.password);
     console.log(check);
-    if(!check){
+    if(!check || password.length<8){
         return res.status(200).json({message: "Cannot Create  New"});
           
     }
     if(passMatch){
         const show = email.slice(0,1).toUpperCase();
         const search = req.query.search || "general"
-        const begin = "2024-02-21"
-        const end = "2024-02-26"
+        const begin = "2024-04-15"
+        const end = "2024-04-10"
         var url = `https://newsapi.org/v2/everything?q=${search}&from=${begin}&to=${end}&sortBy=popularity&apiKey=8200207d22d148b596df946f1e4ff792`
         const news_get =await axios.get(url)
 
@@ -69,13 +76,25 @@ newsr.post("/signup", async(req, res) => {
     }
 });
 
-
+newsr.post('/feedback', async(req, res) => {
+    const email = req.body.feedback_email;
+    const ext = await FeedBack.findOne({email:email});
+    if(ext){
+        return res.status(600).json({message: "Already Registered!"});
+    }
+    else{
+        await FeedBack.create({
+            email:email,
+        });
+        res.redirect('/');
+    }
+})
 
 newsr.get('/',async(req,res)=>{
     try {
-        const search = req.query.search || "general"
-        const begin = "2024-02-21"
-        const end = "2024-02-26"
+        const search = req.query.search || "general";
+        const begin = "2024-04-02"
+        const end = "2024-04-03"
         var url = `https://newsapi.org/v2/everything?q=${search}&from=${begin}&to=${end}&sortBy=popularity&apiKey=8200207d22d148b596df946f1e4ff792`
         const news_get =await axios.get(url)
 
@@ -154,6 +173,7 @@ newsr.get('/news/:category',async(req,res)=>{
 
     }
 })
+
 
 
 
