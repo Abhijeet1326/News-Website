@@ -15,10 +15,16 @@ const userSchema = mongoose.Schema({
 });
 
 const UserFeedBack = mongoose.Schema({
+    email: String,
+    feedback: String
+});
+
+const userSub = mongoose.Schema({
     email: String
 });
 
 const FeedBack = mongoose.model("Feed", UserFeedBack);
+const Subscribe = mongoose.model("Sub", userSub);
 const Item = mongoose.model("USer", userSchema);
 
 
@@ -78,17 +84,29 @@ newsr.post("/signup", async(req, res) => {
 
 newsr.post('/feedback', async(req, res) => {
     const email = req.body.feedback_email;
+    const feed = req.body.feedback;
     const ext = await FeedBack.findOne({email:email});
+    await FeedBack.create({
+            email:email,
+            feedback:feed
+        });
+        res.redirect('/');
+    
+});
+
+newsr.post('/subscribe', async(req, res) => {
+    const email = req.body.subscribe_email;
+    const ext = await Subscribe.findOne({email:email});
     if(ext){
-        return res.status(600).json({message: "Already Registered!"});
+        return res.status(700).json({message: "Already Registered!"});
     }
     else{
-        await FeedBack.create({
+        await Subscribe.create({
             email:email,
         });
         res.redirect('/');
     }
-})
+});
 
 newsr.get('/',async(req,res)=>{
     try {

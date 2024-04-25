@@ -47,6 +47,9 @@
     display: flex;
     gap: 5px;
   }
+  .news-letter{
+    margin-top: 10px;
+  }
   .footer-col input {
     height: 40px;
     border-radius: 6px;

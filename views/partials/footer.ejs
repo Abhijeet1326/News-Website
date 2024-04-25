@@ -20,6 +20,15 @@
         <div class="news-letter">
           <form action="/feedback" method="post">
             <input type="text" placeholder="Your email" required name="feedback_email">
+            <input type="text" placeholder="Feedback" required name="feedback">
+            <input type="submit" id="sub" value="FEEDBACK" onclick="this.value='Done'">
+          </form>
+        </div>
+
+        <div class="news-letter">
+          <form action="/subscribe" method="post">
+            <input type="text" placeholder="Your email" required name="subscribe_email">
+            
             <input type="submit" id="sub" value="SUBSCRIBE" onclick="this.value='Done'">
           </form>
         </div>
