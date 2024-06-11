@@ -68,6 +68,12 @@
     align-items: center;
 }
 
+#sub-but:hover{
+    background-color: black;
+    border-color: aqua;
+    color: aqua;
+}
+
 .search-cont button span{
     font-size: 2.1rem;
 }

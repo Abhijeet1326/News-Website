@@ -111,8 +111,8 @@ newsr.post('/subscribe', async(req, res) => {
 newsr.get('/',async(req,res)=>{
     try {
         const search = req.query.search || "general";
-        const begin = "2024-04-02"
-        const end = "2024-04-03"
+        const begin = "2024-06-02"
+        const end = "2024-06-03"
         var url = `https://newsapi.org/v2/everything?q=${search}&from=${begin}&to=${end}&sortBy=popularity&apiKey=8200207d22d148b596df946f1e4ff792`
         const news_get =await axios.get(url)
 
