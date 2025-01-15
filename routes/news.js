@@ -45,8 +45,8 @@ newsr.post("/login", async(req, res) => {
     if(passMatch){
         const show = email.slice(0,1).toUpperCase();
         const search = req.query.search || "general"
-        const begin = "2024-04-15"
-        const end = "2024-04-10"
+        const begin = "2025-01-05"
+        const end = "2025-01-06"
         var url = `https://newsapi.org/v2/everything?q=${search}&from=${begin}&to=${end}&sortBy=popularity&apiKey=8200207d22d148b596df946f1e4ff792`
         const news_get =await axios.get(url)
 
@@ -111,8 +111,8 @@ newsr.post('/subscribe', async(req, res) => {
 newsr.get('/',async(req,res)=>{
     try {
         const search = req.query.search || "general";
-        const begin = "2024-06-02"
-        const end = "2024-06-03"
+        const begin = "2025-01-01"
+        const end = "2025-01-02"
         var url = `https://newsapi.org/v2/everything?q=${search}&from=${begin}&to=${end}&sortBy=popularity&apiKey=8200207d22d148b596df946f1e4ff792`
         const news_get =await axios.get(url)
 
@@ -179,7 +179,7 @@ newsr.post('/search',async(req,res)=>{
 newsr.get('/news/:category',async(req,res)=>{
     var category = req.params.category;
     try {
-        var url = 'http://newsapi.org/v2/top-headlines?country=in&category=' + category + '&apiKey=36f3e29b704f41339af8439dc1228334';
+        var url = 'http://newsapi.org/v2/top-headlines?country=us&category=' + category + '&apiKey=36f3e29b704f41339af8439dc1228334';
 
         const news_get =await axios.get(url)
         res.render('category',{articles:news_get.data.articles, butt:"Login/SignUp"})
